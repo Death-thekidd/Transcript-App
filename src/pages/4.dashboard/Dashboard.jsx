@@ -2,15 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { Outlet, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import { Avatar, userWelcome } from "../../assets";
-import {
-	BuildingLibraryIcon,
-	BuildingOffice2Icon,
-	RectangleStackIcon,
-	RocketLaunchIcon,
-	UserGroupIcon,
-} from "@heroicons/react/24/outline";
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 // const userInfo = [
 //   { tag: 'Name', result: 'Users Name' },

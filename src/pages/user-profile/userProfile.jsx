@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { Avatar, userWelcome } from "../../assets";
+import {
+	BuildingLibraryIcon,
+	BuildingOffice2Icon,
+	RectangleStackIcon,
+	RocketLaunchIcon,
+	UserGroupIcon,
+} from "@heroicons/react/24/outline";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 const UserProfile = () => {
+	const userId = localStorage.getItem("transcript-uid");
+	const [user, setUser] = useState({});
+	// User Fetching
+	useEffect(() => {
+		fetchUser();
+	}, []);
+
+	const fetchUser = async () => {
+		try {
+			const res = await fetch(
+				`http://api.transcript.dtkapp.com.ng/user/${userId}`
+			);
+
+			if (!res.status === 200) throw new Error("Couldn't fetch API");
+			const resJson = await res.json();
+			setDepartment(resJson.data);
+			console.log(resJson.data);
+		} catch (err) {
+			console.error(err);
+		}
+	};
 	return (
 		<div className="flex justify-center gap-5 items-center m-4 ">
 			<div className=" w-[30%] h-[90%] bg-gray-100 rounded-md rounded-t-3xl">
@@ -16,9 +46,9 @@ const UserProfile = () => {
 
 					<div>
 						<h3 className=" text-xl font-semibold pt-3 text-gray-100">
-							Oluwafemi Micheal
+							{user?.name}
 						</h3>
-						<h2 className=" text-gray-100 text-sm">raythedev@gmail.com</h2>
+						<h2 className=" text-gray-100 text-sm">{user?.email}</h2>
 					</div>
 				</div>
 
@@ -93,25 +123,25 @@ const UserProfile = () => {
 								<span className="text-lg text-neutral-600 font-semibold">
 									Name
 								</span>
-								Oluwafemi
+								{user?.name}
 							</h1>
 							<h1 className="flex justify-between">
 								<span className="text-lg text-neutral-600 font-semibold">
 									Email
 								</span>
-								raythedev@gmail.com
+								{user?.email}
 							</h1>
 							<h1 className="flex justify-between ">
 								<span className="text-lg text-neutral-600 font-semibold">
 									College
 								</span>
-								Technology
+								{user?.college}
 							</h1>
 							<h1 className="flex justify-between">
 								<span className="text-lg text-neutral-600 font-semibold">
 									Department
 								</span>
-								Computer Science
+								{user?.department}
 							</h1>
 						</div>
 					</div>
