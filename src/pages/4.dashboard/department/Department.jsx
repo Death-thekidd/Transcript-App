@@ -18,7 +18,7 @@ const Department = () => {
   const fetchDepartments = async () => {
     try {
       const res = await fetch(
-        `http://api.transcript.dtkapp.com.ng/departments`
+        `https://api.transcript.dtkapp.com.ng/departments`
       );
 
       if (!res.status === 200) throw new Error("Couldn't fetch API");

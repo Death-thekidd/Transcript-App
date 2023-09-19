@@ -33,7 +33,7 @@ const College = () => {
 
     try {
       let res = await fetch(
-        'http://api.transcript.almanaracademy.com.ng/create-college',
+        'https://api.transcript.almanaracademy.com.ng/create-college',
         {
           method: 'POST',
           headers: {
