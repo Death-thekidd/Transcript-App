@@ -11,7 +11,7 @@ const Users = () => {
 
 	const fetchColleges = async function () {
 		try {
-			const res = await fetch(`http://api.transcript.dtkapp.com.ng/users`);
+			const res = await fetch(`https://dtkapp.com.ng/users`);
 
 			if (!res.status === 200) throw new Error("Couldn't fetch API");
 			const resJson = await res.json();

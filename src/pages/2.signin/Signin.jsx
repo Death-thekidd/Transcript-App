@@ -16,7 +16,7 @@ const Signin = () => {
 				email: email,
 				password: password,
 			});
-			let res = await fetch("http://api.transcript.dtkapp.com.ng/login", {
+			let res = await fetch("https://dtkapp.com.ng/login", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

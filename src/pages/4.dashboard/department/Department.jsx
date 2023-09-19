@@ -18,7 +18,7 @@ const Department = () => {
 	const fetchDepartments = async () => {
 		try {
 			const res = await fetch(
-				`http://api.transcript.dtkapp.com.ng/departments`
+				`https://dtkapp.com.ng/departments`
 			);
 
 			if (!res.status === 200) throw new Error("Couldn't fetch API");
@@ -36,7 +36,7 @@ const Department = () => {
 
 		try {
 			let res = await fetch(
-				"http://api.transcript.almanaracademy.com.ng/create-department",
+				"https://dtkapp.com.ng/create-department",
 				{
 					method: "POST",
 					headers: {
@@ -67,7 +67,7 @@ const Department = () => {
 	const fetchCollegeOptions = async () => {
 		try {
 			const response = await fetch(
-				"http://api.transcript.almanaracademy.com.ng/colleges"
+				"https://dtkapp.com.ng/colleges"
 			);
 			const data = await response.json();
 			// setCollege(data.data);

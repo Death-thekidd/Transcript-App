@@ -15,7 +15,7 @@ const College = () => {
 
 	const fetchColleges = async () => {
 		try {
-			const res = await fetch("http://api.transcript.dtkapp.com.ng/colleges");
+			const res = await fetch("https://dtkapp.com.ng/colleges");
 
 			if (!res.status === 200) throw new Error("Couldn't fetch API");
 			const resJson = await res.json();
@@ -31,7 +31,7 @@ const College = () => {
 
 		try {
 			let res = await fetch(
-				"http://api.transcript.almanaracademy.com.ng/create-college",
+				"https://dtkapp.com.ng/create-college",
 				{
 					method: "POST",
 					headers: {
@@ -57,7 +57,7 @@ const College = () => {
 	const onDelete = async function (id) {
 		try {
 			let res = await fetch(
-				`http://api.transcript.almanaracademy.com.ng/delete-college/${id}`,
+				`https://dtkapp.com.ng/delete-college/${id}`,
 				{
 					method: "DELETE",
 					headers: {
