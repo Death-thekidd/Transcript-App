@@ -44,7 +44,7 @@ const Signup = () => {
 
 	const fetchCollegeOptions = async () => {
 		try {
-			const response = await fetch("http://dtkapp.com.ng/colleges"); // Replace with your API endpoint
+			const response = await fetch("https://dtkapp.com.ng/colleges"); // Replace with your API endpoint
 			const data = await response.json();
 			setCollegeOptions(data.data); // Set the received data as options
 		} catch (error) {
