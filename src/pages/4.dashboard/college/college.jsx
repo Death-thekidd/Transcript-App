@@ -16,7 +16,7 @@ const College = () => {
   const fetchColleges = async () => {
     try {
       const res = await fetch(
-        'http://api.transcript.almanaracademy.com.ng/colleges'
+        'http://api.transcript.dtkapp.com.ng/colleges'
       );
 
       if (!res.status === 200) throw new Error("Couldn't fetch API");

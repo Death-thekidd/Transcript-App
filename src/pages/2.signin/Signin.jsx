@@ -17,7 +17,7 @@ const Signin = () => {
         password: password,
       });
       let res = await fetch(
-        'https://api.transcript.almanaracademy.com.ng/login',
+        'https://api.transcript.dtkapp.com.ng/login',
         {
           method: 'POST',
           headers: {
