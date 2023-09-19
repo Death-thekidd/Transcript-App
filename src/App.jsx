@@ -12,6 +12,7 @@ import Destination from "./pages/4.dashboard/destination/destination";
 import Users from "./pages/4.dashboard/users/Users";
 import Checkout from "./pages/4.dashboard/checkout/Checkout";
 import College from "./pages/4.dashboard/college/college";
+import UserProfile from "./pages/user-profile/userProfile";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 				<Route path="/signin" element={<Signin />} />
 				<Route path="/signup" element={<Signup />} />
 				<Route path="/dashboard" element={<Dashboard />}>
+					<Route index element={<UserProfile />} />
 					<Route path="college" element={<College />} />
 					<Route path="destination" element={<Destination />} />
 					<Route path="department" element={<Department />} />
