@@ -15,7 +15,7 @@ const College = () => {
 
 	const fetchColleges = async () => {
 		try {
-			const res = await fetch("http://api.transcript.dtkapp.com.ng/colleges");
+			const res = await fetch("https://api.transcript.dtkapp.com.ng/colleges");
 
 			if (!res.status === 200) throw new Error("Couldn't fetch API");
 			const resJson = await res.json();
