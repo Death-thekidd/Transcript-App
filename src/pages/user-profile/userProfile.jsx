@@ -20,7 +20,7 @@ const UserProfile = () => {
 	const fetchUser = async () => {
 		try {
 			const res = await fetch(
-				`https://api.transcript.dtkapp.com.ng/user/${userId}`
+				`http://api.transcript.dtkapp.com.ng/user/${userId}`
 			);
 
 			if (!res.status === 200) throw new Error("Couldn't fetch API");

@@ -25,7 +25,7 @@ const Signup = () => {
   const fetchOptions = async () => {
     try {
       const response = await fetch(
-        `https://api.transcript.dtkapp.com.ng/departments`
+        `http://api.transcript.dtkapp.com.ng/departments`
       ); // Replace with your API endpoint
       const data = await response.json();
       setOptions(data.data); // Set the received data as options
