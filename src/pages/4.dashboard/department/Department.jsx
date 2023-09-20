@@ -17,9 +17,7 @@ const Department = () => {
 
 	const fetchDepartments = async () => {
 		try {
-			const res = await fetch(
-				`https://dtkapp.com.ng/departments`
-			);
+			const res = await fetch(`https://dtkapp.com.ng/departments`);
 
 			if (!res.status === 200) throw new Error("Couldn't fetch API");
 			const resJson = await res.json();
@@ -35,19 +33,16 @@ const Department = () => {
 		e.preventDefault();
 
 		try {
-			let res = await fetch(
-				"https://dtkapp.com.ng/create-department",
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						name: addDepartment,
-						college: collegeSelectedOption,
-					}),
-				}
-			);
+			let res = await fetch("https://dtkapp.com.ng/create-department", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					name: addDepartment,
+					college: collegeSelectedOption,
+				}),
+			});
 			if (res.status === 200) {
 				toast.success("Department created Successfully");
 				setHide(false);
@@ -66,9 +61,7 @@ const Department = () => {
 
 	const fetchCollegeOptions = async () => {
 		try {
-			const response = await fetch(
-				"https://dtkapp.com.ng/colleges"
-			);
+			const response = await fetch("https://dtkapp.com.ng/colleges");
 			const data = await response.json();
 			// setCollege(data.data);
 			setCollegeOptions(data.data);
@@ -172,7 +165,7 @@ const Department = () => {
 							.filter((item) => {
 								return search.toLowerCase() === ""
 									? item
-									: item.name.toLowerCase().includes(search);
+									: item.name.toLowerCase().includes(search.toLowerCase());
 							})
 							.map((dept, idx) => (
 								<tr key={idx}>

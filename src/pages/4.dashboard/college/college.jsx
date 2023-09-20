@@ -30,18 +30,15 @@ const College = () => {
 		e.preventDefault();
 
 		try {
-			let res = await fetch(
-				"https://dtkapp.com.ng/create-college",
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						name: addCollege,
-					}),
-				}
-			);
+			let res = await fetch("https://dtkapp.com.ng/create-college", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					name: addCollege,
+				}),
+			});
 
 			if (res.status === 200) {
 				toast.success("College created Successfully");
@@ -56,18 +53,15 @@ const College = () => {
 
 	const onDelete = async function (id) {
 		try {
-			let res = await fetch(
-				`https://dtkapp.com.ng/delete-college/${id}`,
-				{
-					method: "DELETE",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						id: id,
-					}),
-				}
-			);
+			let res = await fetch(`https://dtkapp.com.ng/delete-college/${id}`, {
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					id: id,
+				}),
+			});
 
 			if (res.status === 204) {
 				toast.success("Ypu have deleted a College");
@@ -151,7 +145,7 @@ const College = () => {
 							.filter((item) => {
 								return search.toLowerCase() === ""
 									? item
-									: item.name.toLowerCase().includes(search);
+									: item.name.toLowerCase().includes(search.toLowerCase());
 							})
 							.map((item, idx) => (
 								<tr key={idx + 1}>
